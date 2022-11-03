@@ -1,16 +1,33 @@
 import React from 'react';
-import { Avatar, Box, Heading, HStack } from '@chakra-ui/react';
+import Container from 'react-bootstrap/Container';
+import styled from 'styled-components';
+import Avatar from './Avatar';
+
+const HeaderStyled = styled.header`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%auto;
+  padding: 12px;
+  border-bottom: 1px solid #e2e8f0;
+  h2 {
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+  }
+`;
 
 const Header = () => {
   return (
-    <HStack bg='white' p={4} justifyContent='space-between' border='1px' borderColor='gray.200'>
-      <Heading as='h2' size='md'>
-        Student Management
-      </Heading>
-      <Box>
+    <HeaderStyled>
+      <Container
+        style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
+        fluid
+      >
+        <h2>Food Recipe</h2>
         <Avatar />
-      </Box>
-    </HStack>
+      </Container>
+    </HeaderStyled>
   );
 };
 

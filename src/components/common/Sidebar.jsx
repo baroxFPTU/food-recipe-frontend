@@ -1,15 +1,33 @@
 import React from 'react';
-import { Box, Flex } from '@chakra-ui/react';
-import NavItem from './NavItem';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import Button from 'react-bootstrap/Button';
+
+const SidebarStyled = styled.nav`
+  border-right: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 24px;
+  gap: 12px;
+
+  a {
+    text-align: left;
+  }
+`;
 
 const Sidebar = () => {
   return (
-    <Box h='full' bg='white' borderRight='1px' borderColor='gray.200'>
-      <Flex direction='column' w='100%' p={3} gap={3}>
-        <NavItem href='/admin/dashboard' label='Dashboard' />
-        <NavItem href='/admin/students' label='Students' />
-      </Flex>
-    </Box>
+    <SidebarStyled>
+      <Button as={Link} variant='light' to='/users'>
+        Users
+      </Button>
+      <Button as={Link} variant='light' to='/posts'>
+        Posts
+      </Button>
+      <Button as={Link} variant='light' to='/ingredients'>
+        Ingredients
+      </Button>
+    </SidebarStyled>
   );
 };
 
