@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import { Controller, useForm } from 'react-hook-form';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import axiosClient from '../api/axiosClient';
 
 const defaultValues = {
@@ -18,6 +18,7 @@ const defaultValues = {
 
 const AccountEditPage = () => {
   const params = useParams();
+  const history = useHistory();
   const [user, setUser] = useState(null);
   const { reset, control, handleSubmit } = useForm({
     defaultValues: defaultValues,
@@ -41,6 +42,8 @@ const AccountEditPage = () => {
             ...formValues,
           });
         }
+
+        history.push('/users');
       } catch (error) {
         console.log(error);
       }

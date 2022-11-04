@@ -11,6 +11,7 @@ import CustomPagination from '../components/common/CustomPagination';
 import axiosClient from '../api/axiosClient';
 import { ingredientActions } from '../features/ingredients/ingredientSlice';
 import Stack from 'react-bootstrap/Stack';
+import Container from 'react-bootstrap/Container';
 
 let active = 2;
 let items = [];
@@ -22,7 +23,7 @@ for (let number = 1; number <= 5; number++) {
   );
 }
 
-const IngredientPageStyled = styled.div`
+const IngredientPageStyled = styled(Container)`
   h1 {
     margin-bottom: 12px;
   }
@@ -57,11 +58,13 @@ const IngredientPage = () => {
 
   return (
     <IngredientPageStyled>
-      <Stack direction='horizontal'>
+      <Stack direction='horizontal' gap={3}>
         <h1>Manage Ingredients</h1>
-        <Button>Add</Button>
+        <Button as={Link} to='/ingredients/add'>
+          Add
+        </Button>
       </Stack>
-      <ActionTable headers={tableHeaders}>
+      <ActionTable headers={tableHeaders} style={{ maxHeight: '60vh', overflow: 'auto' }}>
         {!isLoading &&
           ingredients.map((ingredient) => (
             <tr key={ingredient.id}>

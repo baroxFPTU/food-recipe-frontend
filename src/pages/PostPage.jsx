@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Pagination from 'react-bootstrap/Pagination';
+import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Stack from 'react-bootstrap/Stack';
 
@@ -22,7 +23,7 @@ for (let number = 1; number <= 5; number++) {
   );
 }
 
-const PostPageStyled = styled.div`
+const PostPageStyled = styled(Container)`
   h1 {
     margin-bottom: 12px;
   }

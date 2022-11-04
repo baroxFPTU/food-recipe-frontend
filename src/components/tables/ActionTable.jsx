@@ -2,9 +2,9 @@ import React from 'react';
 import Table from 'react-bootstrap/Table';
 
 // headers, children
-const ActionTable = ({ headers, children, onRemove }) => {
+const ActionTable = ({ headers, children, onRemove, ...props }) => {
   return (
-    <Table striped bordered hover>
+    <Table striped bordered hover {...props}>
       <thead>
         <tr>
           {headers.map((header, index) => (

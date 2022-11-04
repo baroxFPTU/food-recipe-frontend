@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import MainLayout from './components/layout/MainLayout';
 import AccountEditPage from './pages/AccountEditPage';
 import AccountPage from './pages/AccountPage';
+import IngredientEditPage from './pages/IngredientEditPage';
 import IngredientPage from './pages/IngredientPage';
 import PostEditPage from './pages/PostEditPage';
 import PostPage from './pages/PostPage';
@@ -51,6 +52,11 @@ function App() {
           <Route path='/posts/edit/:postId'>
             <MainLayout>
               <PostEditPage />
+            </MainLayout>
+          </Route>
+          <Route path='/ingredients/add'>
+            <MainLayout>
+              <IngredientEditPage />
             </MainLayout>
           </Route>
           <Route path='/ingredients'>

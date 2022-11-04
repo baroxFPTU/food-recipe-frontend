@@ -8,8 +8,9 @@ import axiosClient from '../api/axiosClient';
 import CustomPagination from '../components/common/CustomPagination';
 import ActionTable from '../components/tables/ActionTable';
 import { userActions } from '../features/users/userSlice';
+import Container from 'react-bootstrap/Container';
 
-const AccountPageStyled = styled.div`
+const AccountPageStyled = styled(Container)`
   h1 {
     margin-bottom: 12px;
   }
